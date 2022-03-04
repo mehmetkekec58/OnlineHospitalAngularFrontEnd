@@ -1,0 +1,90 @@
+ <!-- <table  class="table">
+    <thead *ngIf="isThereProfile==true">
+        <tr>
+            <th>Kullanıcı adı</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Hakkında</th>
+            <th>Profil foto Url</th>
+            <th *ngIf="article==true">Yazıları</th>
+        </tr>
+    </thead>
+    <tbody>
+<tr *ngFor="let profile of profiles">
+
+<td>{{profile.userName}}</td>
+<td>{{profile.firstName}}</td>
+<td>{{profile.lastName}}</td>
+<td>{{profile.aboutMe}}</td>
+<td>{{profile.profilePhotoUrl}}</td>
+<td *ngFor="let article of profile.articleDetail"><b>{{article.title}}</b>| {{article.text}}</td>
+
+</tr>
+</tbody>
+</table>
+-->
+
+<div *ngIf="isThereProfile==false"><h3>Böyle bir kullanıcı yok</h3></div>
+
+
+
+
+
+
+
+ <div *ngIf="isThereProfile==true" class="container">
+    <div *ngFor="let profile of profiles" class="main-body">
+
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img *ngFor="let profilePhoto of profile.profilePhotoUrl" [src]="profilePhoto.imagePath" alt="userPhoto" class="rounded-circle" width="150" height="150">
+                    <div class="mt-3">
+               <h4>{{profile.firstName}} {{profile.lastName}}</h4>
+                      <p class="text-secondary mb-1">@{{profile.userName}}</p>
+                      <p class="text-muted font-size-sm">{{profile.aboutMe}}</p>
+                      <button *ngIf="samePerson==false && isFallowing1==true" (click)="unFallow()" class="btn btn-danger"><span >Takibi bırak</span></button>
+                      <button *ngIf="samePerson==false && isFallowing1==false" (click)="getFallowed()" class="btn btn-primary"><span >Takip et</span></button>
+                      <button *ngIf="samePerson==false" (click)="chat(profile.userName)" class="btn btn-outline-primary">Mesaj gönder</button>
+                      <button (click)="goProfileUpdate(profile.userName)" *ngIf="samePerson==true" class="btn btn-success">Profili düzenle</button>
+                      <br>
+                      <br>
+                      <a href="/profiles/{{profile.userName}}/fallowerlist">Takipçi: <b>{{fallowedCount.fedCount}}</b> </a>
+                      <br>
+                      <a href="profiles/{{profile.userName}}/fallowinglist">Takip edilen: <b>{{fallowedCount.fingCount}}</b></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div *ngFor="let article of profile.articleDetail" class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <a  href="profiles/{{profile.userName}}/articles/{{article.id}}">
+                  <div class="row">
+
+                      <h6 style="color: darkred;font-family: Roboto;">{{article.title|slice:0:70}}...</h6>
+
+                    <div class="col-sm-9 text-secondary"></div>
+                    {{article.text|slice:0:140}}...
+
+                    </div>
+                  </a>
+                  </div>
+
+                  <hr>
+
+
+
+                  </div>
+                </div>
+                <h3 *ngIf="article==false">Bu kullanıcının yazısı yok</h3>
+              </div>
+
+
+
+
+

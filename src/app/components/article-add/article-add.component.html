@@ -1,0 +1,42 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header"><h5 class="title">Yazı Ekle</h5></div>
+        <div class="card-body"> 
+<form [formGroup]="articleAddForm">
+    <div class="mb-3">
+
+        <label for="title">Başlık</label>
+        <div class="form-group">
+            <input type="text" id="title" formControlName="title" class="form-control" placeholder="Başlık"/>
+        </div>
+
+    </div>
+   
+
+    <div class="mb-3">
+        <label for="text">Metin</label>
+        <div class="form-group">
+            <textarea  type="textarea" id="text" formControlName="text" class="form-control" placeholder="Metin" rows="4" cols="50" ></textarea>
+        </div>
+    </div>
+
+
+    
+      
+
+
+
+
+    
+</form>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+        </div>
+    </div> 
+</div>
+
+
+
+</div>

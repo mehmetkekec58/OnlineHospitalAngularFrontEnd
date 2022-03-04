@@ -1,0 +1,148 @@
+
+<div class="container" *ngFor="let profile of profileDetail">
+<div class="row flex-lg-nowrap">
+ 
+
+  <div class="col">
+    <div class="row">
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="e-profile">
+              <div class="row">
+                <div class="col-12 col-sm-auto mb-3">
+                  <div class="mx-auto" style="width: 140px;">
+                    <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px;">
+                      <span style=" font: bold 8pt Arial;"> <img *ngFor="let profilePhoto of profile.profilePhotoUrl" [src]="profilePhoto.imagePath" alt="Admin" class="rounded-circle" width="140" height="140"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                  <div class="text-center text-sm-left mb-2 mb-sm-0">
+                    <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{profile.firstName}} {{profile.lastName}}</h4>
+                    <p class="mb-0">@{{profile.userName}}</p>
+                    <div class="text-muted"><small>Profil fotoğrafı değiştir:</small></div>
+                    <div class="mt-2">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fa fa-fw fa-camera"></i>
+                        <input type="file" id="photo" accept=".png,.jpeg,.jpg" value="Change Photo">
+                      </button>
+                    </div>
+                  </div>
+                  <div class="text-center text-sm-right">
+                  
+                    <div class="text-muted"><small>09 Dec 2017 tarihinde katıldı</small></div>
+                  </div>
+                </div>
+              </div>
+              <ul class="nav nav-tabs">
+                <li class="nav-item"><a href="" class="active nav-link">Ayarlar</a></li>
+              </ul>
+              <div class="tab-content pt-3">
+                <div class="tab-pane active">
+                  <form class="form" novalidate="">
+                    <div class="row">
+                      <div class="col">
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Adı</label>
+                              <input class="form-control" type="text" name="name" placeholder="{{profile.firstName}}" >
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Soyadı</label>
+                              <input class="form-control" type="text" name="username" placeholder="{{profile.lastName}}" >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Kullanıcı adı</label>
+                              <div class="input-group">
+                                <div class="input-group-text" id="btnGroupAddon">@</div>
+                              <input class="form-control" id="btnGroupAddon" type="text" placeholder="{{profile.userName}}">
+                            </div></div>
+                          </div>
+                        </div>
+                
+                        <div class="row">
+                          <div class="col mb-3">
+                            <div class="form-group">
+                              <label>Hakkında</label>
+                              <textarea class="form-control" rows="5" placeholder="{{profile.aboutMe}}"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-sm-6 mb-3">
+                        <div class="mb-2"><b>Şifre değiştir</b></div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Şuanki şifren</label>
+                              <input class="form-control" type="password" placeholder="••••••">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Yeni şifre</label>
+                              <input class="form-control" type="password" placeholder="••••••">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Yeni şifre tekrar <span class="d-none d-xl-inline">Password</span></label>
+                              <input class="form-control" type="password" placeholder="••••••"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-5 offset-sm-1 mb-3">
+                        <div class="mb-2"><b>İletişimde kal</b></div>
+                        <div class="row">
+                          <div class="col">
+                            <label>E-posta bildirimleri</label>
+                            <div class="custom-controls-stacked px-2">
+                              <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="notifications-blog" checked="">
+                                <label class="custom-control-label" for="notifications-blog">Gönderi bildirimleri</label>
+                              </div>
+                             
+                              <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="notifications-offers" checked="">
+                                <label class="custom-control-label" for="notifications-offers">Kişisel bildirimler</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col d-flex justify-content-end">
+                   
+
+                        <button class="btn btn-primary" type="submit">Değişiklikleri Kaydet</button>
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+
+  </div>
+</div>
+</div>

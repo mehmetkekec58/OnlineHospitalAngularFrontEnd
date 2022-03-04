@@ -1,0 +1,49 @@
+<body class="text-center">
+    
+    <main class="form-signin">
+      <form [formGroup]="registerForm">
+   
+        <h1 class="h3 mb-3 fw-normal">Kayıt ol</h1>
+        <div class="mb-3">
+        <div class="form-floating">
+            <input formControlName="firstname" type="text" class="form-control" id="floatingfirstname" placeholder="Adı">
+            <label for="floatingInput">Adı</label>
+          </div>
+        </div>
+
+          <div class="mb-3">
+          <div class="form-floating">
+            <input formControlName="lastname" type="text" class="form-control" id="floatinglastname" placeholder="Soyadı">
+            <label for="floatingInput">soyadı</label>
+          </div>
+          </div>
+
+          <div class="mb-3">
+          <div class="form-floating">
+            <input formControlName="username" type="text" class="form-control" id="floatingusername" placeholder="kullanıcı adı">
+            <label for="floatingInput">Kullanıcı adı</label>
+          </div>
+          </div>
+
+          <div class="mb-3">
+        <div class="form-floating">
+          <input formControlName="email" type="email" class="form-control" id="floatingemail" placeholder="name@example.com">
+          <label for="floatingInput">E-posta</label>
+        </div>
+          </div>
+
+          <div class="mb-3">
+        <div class="form-floating">
+          <input formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Şifre</label>
+        </div>
+          </div>
+      
+        <button class="w-100 btn btn-lg btn-primary" (click)="register()">Kayıt ol</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+      </form>
+    </main>
+    
+    
+        
+      </body>

@@ -1,0 +1,27 @@
+.baslik{
+    text-align: center;margin-top: 8px;
+}
+
+.metin{
+    font-size: medium;
+}
+
+.arkaalan{
+    background-color: rgb(214, 156, 231); height: auto; border: 3px solid;border-radius: 10px;
+}
+.metindivi{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.profil_fotografi{
+    margin-top: 10px;
+    border: 2px solid white;
+    border-radius: 25px;
+}
+.name_lastname{
+    font-size: medium;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 10px;
+
+}
